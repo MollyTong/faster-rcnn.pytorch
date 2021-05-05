@@ -166,11 +166,10 @@ if __name__ == '__main__':
     'faster_rcnn_{}_{}_{}.pth'.format(args.checksession, args.checkepoch, args.checkpoint))
 
   pascal_classes = np.asarray(['__background__',
-                       'aeroplane', 'bicycle', 'bird', 'boat',
-                       'bottle', 'bus', 'car', 'cat', 'chair',
-                       'cow', 'diningtable', 'dog', 'horse',
-                       'motorbike', 'person', 'pottedplant',
-                       'sheep', 'sofa', 'train', 'tvmonitor'])
+                            'Pedstrain', 'Person on vehicle', 'Car', 'Bicycle',
+                            'Motorbike', 'Non motorized vehicle', 'Static Person',
+                            'Distractor', 'Occluder', 'Occluder on the ground', 'Occluder ull',
+                            'Reflection')
 
   # initilize the network here.
   if args.net == 'vgg16':
@@ -345,7 +344,7 @@ if __name__ == '__main__':
               cls_boxes = pred_boxes[inds, :]
             else:
               cls_boxes = pred_boxes[inds][:, j * 4:(j + 1) * 4]
-            
+
             cls_dets = torch.cat((cls_boxes, cls_scores.unsqueeze(1)), 1)
             # cls_dets = torch.cat((cls_boxes, cls_scores), 1)
             cls_dets = cls_dets[order]
