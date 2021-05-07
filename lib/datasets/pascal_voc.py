@@ -47,7 +47,7 @@ class pascal_voc(imdb):
         self._data_path = os.path.join(self._devkit_path, 'VOC' + self._year)
         self._classes = ('__background__',  # always index 0
                          'pedestrian', 'person on vehicle', 'car', 'bicycle',
-                         'motorbike', 'non motorized vehicle', 'static Person',
+                         'motorbike', 'non motorized vehicle', 'static person',
                          'distractor', 'occluder', 'occluder on the ground', 'occluder full',
                          'reflection')
         self._class_to_ind = dict(zip(self.classes, xrange(self.num_classes)))
