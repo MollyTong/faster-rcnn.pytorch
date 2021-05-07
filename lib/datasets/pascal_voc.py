@@ -46,7 +46,7 @@ class pascal_voc(imdb):
             else devkit_path
         self._data_path = os.path.join(self._devkit_path, 'VOC' + self._year)
         self._classes = ('__background__',  # always index 0
-                         'pedstrain', 'person on vehicle', 'car', 'bicycle',
+                         'pedestrain', 'person on vehicle', 'car', 'bicycle',
                          'motorbike', 'non motorized vehicle', 'static Person',
                          'distractor', 'occluder', 'occluder on the ground', 'occluder full',
                          'reflection')
