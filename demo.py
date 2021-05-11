@@ -217,10 +217,20 @@ if __name__ == '__main__':
     gt_boxes = gt_boxes.cuda()
 
   # make variable
-  im_data = Variable(im_data, volatile=True)
-  im_info = Variable(im_info, volatile=True)
-  num_boxes = Variable(num_boxes, volatile=True)
-  gt_boxes = Variable(gt_boxes, volatile=True)
+#   im_data = Variable(im_data, volatile=True)
+#   im_info = Variable(im_info, volatile=True)
+#   num_boxes = Variable(num_boxes, volatile=True)
+#   gt_boxes = Variable(gt_boxes, volatile=True)
+
+  with torch.no_grad():
+     im_data = im_data
+  with torch.no_grad():
+     im_info = im_info
+  with torch.no_grad():
+     num_boxes = num_boxes
+  with torch.no_grad():
+     gt_boxes = gt_boxes
+        
 
   if args.cuda > 0:
     cfg.CUDA = True
